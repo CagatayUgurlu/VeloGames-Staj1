@@ -1,2 +1,1 @@
-# VeloGames Staj1
- 
+# VeloGames Sanal Staj Programı Görev 1
