@@ -59,7 +59,7 @@ public class LibraryManagementSystem
     {
         books.Add(book);
         Console.WriteLine($"{book.Title} kütüphaneye eklendi.");
-        //Console.WriteLine($"{kitap.Yazar} kutuphaneye eklendi.");
+        Console.WriteLine($"{book.Author} kutuphaneye eklendi.");
     }
 
     // kütüphanedeki kitapların listesi.
@@ -187,7 +187,6 @@ class Program
                     break;
                     
             }
-           
         }
     }
 }
