@@ -21,7 +21,7 @@ public class Book
         BorrowedCopies = 0; // Başlangıçta ödünç alınan kopya yok
     }
 
-    // Kitabın ödünç alınması
+    // Kitabı ödünç alma
     public void BorrowIt()
     {
         if (NumberOfCopies > BorrowedCopies)
@@ -35,7 +35,7 @@ public class Book
         }
     }
 
-    // Kitabın iade edilmesi
+    // Kitabı iade et
     public void ReturnIt()
     {
         if (BorrowedCopies > 0)
@@ -54,7 +54,7 @@ public class LibraryManagementSystem
 {
     private List<Book> books = new List<Book>();
 
-    // Kütüphaneye yeni bir kitap eklemek için metod
+    // Kütüphaneye yeni bir kitap ekleme.
     public void AddBook(Book book)
     {
         books.Add(book);
@@ -62,18 +62,17 @@ public class LibraryManagementSystem
         //Console.WriteLine($"{kitap.Yazar} kutuphaneye eklendi.");
     }
 
-    // Kütüphanedeki tüm kitapların listesini görüntülemek için metod
+    // kütüphanedeki kitapların listesi.
     public void ListAllBooks()
     {
         Console.WriteLine("Kütüphanedeki Tüm Kitaplar:");
         foreach (var book in books)
         {
             Console.WriteLine(book.Title);
-           //Console.WriteLine(kitap.KopyaSayisi);
         }
     }
 
-    // Bir kitabı başlığına veya yazarına göre aramak için metod
+    // kitabı başlığına ve yazarına göre arama
     public void SearchBook(string searchWord)
     {
         Console.WriteLine($"Arama Sonuçları \"{searchWord}\" ile:");
@@ -86,7 +85,7 @@ public class LibraryManagementSystem
         }
     }
 
-    // Bir kitabı ödünç almak için metod
+    // Bir kitabı ödünç al.
     public void BorrowABook(string bookName)
     {
         var book = books.Find(k => k.Title == bookName);
@@ -100,7 +99,7 @@ public class LibraryManagementSystem
         }
     }
 
-    // Bir kitabı iade etmek için metod
+    // Kitabı iade et.
     public void ReturnBook(string bookName)
     {
         var book = books.Find(k => k.Title == bookName);
@@ -121,17 +120,17 @@ class Program
     {
         LibraryManagementSystem LMS = new LibraryManagementSystem();
 
-        // Kitap örnekleri oluşturuluyor
+        // kitap örnekleri
         Book book1 = new Book("Harry Potter ve Felsefe Taşı", "J.K. Rowling", "9789750800759", 5);
         Book book2 = new Book("Satranç", "Stefan Zweig", "9789753638018", 3);
         Book book3 = new Book("Romeo and Juliet", "William Shakespeare", "9780671722852", 2);
 
-        // Kitaplar kütüphaneye ekleniyor
+        // kitaplar kütüphaneye ekleme
         LMS.AddBook(book1);
         LMS.AddBook(book2);
         LMS.AddBook(book3);
 
-        // Kullanıcıya menü seçeneklerini göster
+        // Kullanıcının menü seçenekleri
         Console.WriteLine("Kütüphane Yönetim Sistemine Hoş Geldiniz!");
         Console.WriteLine("1. Yeni Kitap Ekle");
         Console.WriteLine("2. Tüm Kitapları Listele");
@@ -140,7 +139,7 @@ class Program
         Console.WriteLine("5. Kitap İade Et");
         Console.WriteLine("6. Çıkış");
 
-        // Kullanıcının seçim yapmasını sağla
+        // Kullanıcının seçim yapacağı yer.
         bool continued = true;
         while (continued)
         {
